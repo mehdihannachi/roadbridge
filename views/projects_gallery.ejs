@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="roadbridge">
+
+<head>
+    <!-- Basic Page Needs
+	================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roadbridge - Projects Gallery</title>
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="author" content=" ">
+
+    <!-- ==============================================
+	Favicons
+	=============================================== -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+
+    <!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/theme-elements.css">
+
+    <!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script type="text/javascript" src="js/vendor/modernizr.min.js"></script>
+    <style type="text/css">
+        /*#listproject li{ display:none;}*/
+        
+        #loadMore {
+            color: #041e42;
+            cursor: pointer;
+            text-align: center;
+        }
+        #loadMore:hover {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body ng-controller="projectController">
+
+    <!-- Load page -->
+    <div class="animationload">
+
+        <div class="spinner">
+            <img id="logo-spinner" src="images/logo-load.png"></img>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP SECTION -->
+    <a href="#top" class="cd-top cd-is-visible cd-fade-out">Top</a>
+
+    <div class="header">
+        <!-- HEADER SECTION -->
+        <%- include header.ejs %>
+
+    </div>
+
+    <!-- BANNER -->
+    <div class="section banner-page about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="title-page"> Projects Gallery</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team -->
+    <div class="section why overlap" ng-controller="projectController">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <h2 class="section-heading">
+							Our projects
+						</h2>
+                    <ul id="rig">
+                        <li ng-repeat="project in projects " ng-show="$index < loadIndex" class="col-sm-12 col-md-4">
+                            <a class="rig-cell thumb-info" ng-href="/project/{{project._id}}">
+                                <img class="rig-img" ng-src="/public/img/{{project.cover_photo}}" />
+                                <span class="rig-overlay"></span>
+                                <span class="thumb-info-title" style="bottom:0%;">
+                      				<span class="thumb-info-inner" ng-bind="project.contract_title"></span>
+                                    <span class="thumb-info-type" ng-bind="project.client"></span>
+                                    </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <h4 id="loadMore" ng-click="showMore()">Load more</h4>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- FOOTER SECTION -->
+    <%- include footer.ejs %>
+
+        <!-- JS VENDOR -->
+        <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.superslides.js"></script>
+        <script type="text/javascript" src="js/vendor/owl.carousel.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap-hover-dropdown.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="js/vendor/easings.js"></script>
+        <script type="text/javascript" src="js/vendor/isotope.pkgd.min.js"></script>
+
+        <!-- sendmail -->
+        <script type="text/javascript" src="js/vendor/validator.min.js"></script>
+        <script type="text/javascript" src="js/vendor/form-scripts.js"></script>
+
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/moment/min/moment.min.js"></script>
+        <script src="bower_components/moment/min/moment-with-locales.js"></script>
+        <!-- load angular-moment -->
+        <script src="bower_components/angular-moment/angular-moment.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+        <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+        <!--Angular App-->
+        <link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+        <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+        <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+        <script src='bower_components/textAngular/dist/textAngular.min.js'></script>
+        <link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+        <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+        <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+        <script src='bower_components/textAngular/dist/textAngular.min.js'></script>
+        <script src="bower_components/angular-uuid/angular-uuid.js"></script><script src="js/app.js"></script>
+        <script type="text/javascript" src="js/contactController.js"></script>
+
+
+
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript">
+            // 		$(document).ready(function () {
+            //     // Load the first 3 list items from another HTML file
+            //     //$('#myList').load('externalList.html li:lt(3)');
+            //     var x = 5;
+            //     $('#listproject li:lt(5)').show();
+            //     $('#loadMore').click(function () {
+            //     	x = x + 5;
+            //     	$('#listproject li:lt('+x+')').show();
+            //     });
+            // });
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="roadbridge">
+
+<head>
+	<!-- Basic Page Needs
+    ================================================== -->
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Roadbridge - Careers</title>
+	<meta name="description" content=" ">
+	<meta name="keywords" content=" ">
+	<meta name="author" content=" ">
+
+	<!-- ==============================================
+	Favicons
+	=============================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	 
+
+	<!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="css/vendor/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css">
+
+	<!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<script type="text/javascript" src="js/vendor/modernizr.min.js"></script>
+<style type="text/css">
+		.submitted input.ng-invalid {
+			border: solid 1px red !important;
+		}
+		.submitted select.ng-invalid
+		{
+			border: solid 1px red !important;
+		}
+		
+</style>
+</head>
+
+<body ng-controller="careersController">
+
+	<!-- Load page -->
+	<div class="animationload">
+		 
+		<div class="spinner">
+			<img id="logo-spinner" src="images/logo-load.png"></img>
+		</div>
+	</div>
+
+	<!-- BACK TO TOP SECTION -->
+	<a href="#top" class="cd-top cd-is-visible cd-fade-out">Top</a>
+
+	<div class="header">
+		<!-- HEADER SECTION -->
+        <%- include header.ejs %>
+
+	</div>
+
+	<!-- BANNER -->
+	<div class="section banner-page about">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					<div class="title-page" style="background: rgba(0, 0, 0, 0.26);">CAREERS</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact -->
+	<div class="section contact overlap">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-md-push-8">
+					<div class="widget download">
+						<a href="images/brochure/brochure.pdf" target="_blank" class="btn btn-secondary btn-block btn-sidebar"><span class="fa  fa-file-pdf-o"></span> Company Brochure</a>
+					</div>
+					<div class="widget contact-info-sidebar">
+						<div class="widget-title">
+							Head Office
+						</div>
+						<ul class="list-info">
+							<li>
+								<div class="info-icon">
+									<span class="fa fa-map-marker"></span>
+								</div>
+								<div class="info-text">PO Box 7098, Office 605, 6th Floor,
+850 Qatari Bin Al Fujaah Street.
+Bin Mahmoud, Doha, Qatar</div>
+							</li>
+							<li>
+								<div class="info-icon">
+									<span class="fa fa-phone"></span>
+								</div>
+								<div class="info-text"><a href="tel:+97444190333">+974 4419 0333</a></div>
+							</li>
+							<li>
+								<div class="info-icon">
+									<span class="fa fa-fax"></span>
+								</div>
+								<div class="info-text">
+								<a href="tel:+97444418249">+974 4441 8249</a></div>
+							</li>
+							<li>
+								<div class="info-icon">
+									<span class="fa fa-envelope"></span>
+								</div>
+								<div class="info-text"><a href="mailto:info@roadbridgellc.com" target="_blank">info@roadbridgellc.com</a></div>
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+				<div class="col-sm-8 col-md-8 col-md-pull-4">
+					<div class="content">
+						<p class="section-heading-4" style="    text-align: justify;">
+							<span class="section-heading-2" >Roadbridge</span> believes that people are the foundation of its success and takes pride in helping each employee to build a long and satisfying career by sharing knowledge and providing them with learning opportunities
+							so that Roadbridge remains the employer of choice. If you have the passion for hard work in the field of construction, join our dynamic team and you’ll find a wealth of opportunities to learn, grow, and expand your horizons. Roadbridge is always
+							looking for individuals with the intelligence, talent, and skills required to contributing to our growth and success. If that’s something you’d like to be a part of, we look forward to hearing from you.</p>
+						<div class="margin-bottom-30"></div>
+						<h3 class="section-heading-2">
+							Application form :
+						</h3>
+						<form  class="form-contact" data-toggle="validator" name="p" novalidate="true" ng-class="{true:'submitted'}[submitted]">
+							<div class="form-group">
+								<input type="text" class="form-control" ng-model="p.name" placeholder="Full Name..." ng-required="true">
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control"  ng-model="p.email" placeholder="Email..." required="">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" ng-model="p.phone" placeholder="Contact No..."  required="">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" ng-model="p.birth" placeholder="Date of Birth..."  required="">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" ng-model="p.country" placeholder="Country..."  required="">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" ng-model="p.jobcode" placeholder="Job Code..."  required="">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" ng-model="p.website" placeholder="Website..." >
+							</div>
+							<div class="form-group">
+								<span class="form-control">Upload Resume/CV</span>
+								<input type="file" class="form-control" ng-class="classcv" file-model = "p.cv" id ="cb" placeholder="Upload Resume/CV..."  required="">
+							</div>
+							<div class="form-group" ng-show="alertsuccess">
+								<div class="col-xs-10 alert alert-success">Your request has been sent <strong> successfully.</strong></div>
+							</div>
+							<div class="form-group" ng-show="alertdanger">
+								<div class="col-xs-10 alert alert-danger">Your request<strong> has failed! </strong> Please retry later.
+								</div>
+							</div>
+
+							<button type="submit" class="btn btn-secondary disabled" style="pointer-events: all; cursor: pointer;" ng-click="sendMessage(p)">Send</button>
+					</div>
+					</form>
+
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	</div>
+
+
+
+
+	<!-- FOOTER SECTION -->
+	<%- include footer.ejs %>
+
+	<!-- JS VENDOR -->
+	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+	<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.superslides.js"></script>
+	<script type="text/javascript" src="js/vendor/owl.carousel.js"></script>
+	<script type="text/javascript" src="js/vendor/bootstrap-hover-dropdown.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="js/vendor/easings.js"></script>
+	<script type="text/javascript" src="js/vendor/isotope.pkgd.min.js"></script>
+
+	<!-- sendmail -->
+	<script type="text/javascript" src="js/vendor/validator.min.js"></script>
+	<script type="text/javascript" src="js/vendor/form-scripts.js"></script>
+
+
+
+	<script type="text/javascript" src="js/script.js"></script>
+
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+
+<script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/moment/min/moment-with-locales.js"></script>
+    <!-- load angular-moment --> 
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script><script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <!--Angular App-->
+    <link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+    <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular.min.js'></script><link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+    <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular.min.js'></script><script src="bower_components/angular-uuid/angular-uuid.js"></script><script src="js/app.js"></script>
+    <script type="text/javascript" src="js/contactController.js"></script>
+
+</body>
+
+
+
+</html>

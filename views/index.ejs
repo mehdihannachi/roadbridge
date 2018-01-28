@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="roadbridge">
+
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roadbridge LLC</title>
+
+    <!-- ==============================================
+    Favicons
+    =============================================== -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- ==============================================
+    CSS VENDOR
+    =============================================== -->
+    <link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/vendor/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="/js/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/js/owl-carousel/owl.theme.css">
+
+    <!-- ==============================================
+    Custom Stylesheet
+    =============================================== -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <script type="text/javascript" src="/js/vendor/modernizr.min.js"></script>
+
+</head>
+
+<body ng-controller="projectController">
+    <!-- Load page -->
+    <div class="animationload">
+
+        <div class="spinner">
+            <img id="logo-spinner" src="/images/logo-load.png"></img>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP SECTION -->
+    <a href="#top" class="cd-top cd-is-visible cd-fade-out">Top</a>
+
+    <!-- HEADER SECTION -->
+    <%- include header.ejs %>
+
+        </div>
+
+        <!-- BANNER -->
+        <div id="slides" class="section banner">
+
+            <ul class="slides-container">
+
+                <!--<li>-->
+                <!--    <img src="images/homeslider/slide1.jpg" alt="">-->
+                <!--    <div class="overlay-bg"></div>-->
+                <!--    <div class="container">-->
+                <!--        <div class="wrap-caption">-->
+                <!--            <h2 class="caption-heading">-->
+                <!--                Divisional synergy to create sustainable value.-->
+                <!--            </h2>-->
+                <!--            <p>&nbsp;</p>-->
+                <!--            <p>&nbsp;</p>-->
+
+                <!--        </div>-->
+
+                <!--    </div>-->
+                <!--</li>-->
+                <li>
+                    <img src="images/homeslider/slide2.jpg" alt="">
+                    <div class="overlay-bg"></div>
+                    <div class="container">
+                        <div class="wrap-caption">
+                            <h2 class="caption-heading">
+                                We have the experience and expertise to meet the design and quality needs of any client.
+                            </h2>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <!--            <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>-->
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/homeslider/slide3.jpg" alt="">
+                    <div class="overlay-bg"></div>
+                    <div class="container">
+                        <div class="wrap-caption">
+                            <h2 class="caption-heading">
+                                We deliver quality work, on time, to the complete satisfaction of clients.
+                            </h2>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <!--<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>-->
+
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+
+
+            <nav class="slides-navigation">
+                <div class="container">
+                    <a href="#" class="next">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+                    <a href="#" class="prev">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+
+                    <div style="margin-left: 58px;">
+                        <button onclick="window.location.href='/about-us'" class="btn btn-primary" title="LEARN MORE">ABOUT US</button>
+                        <button onclick="window.location.href='/contact-us'" class="btn btn-secondary" title="CONTACT US">CONTACT US</button>
+                    </div>
+
+
+                </div>
+            </nav>
+
+
+        </div>
+
+
+        <!-- ABOUT FEATURE -->
+        <div class="section feature overlap">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h2 class="section-heading">
+                            AT A GLANCE
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-7 col-md-7">
+                        <p class="lead">Roadbridge LLC are a local civil engineering contractor, founded in 2013, specialising in the delivery of complete infrastructure projects from QAR1m - £300m, across all sectors; for a broad range of clients and contract conditions</p>
+                        <p>Roadbridge Limited, along with local Qatari company Petroserv, have recently formed a limited company in Qatar, Roadbridge Civil & Building Contractors LLC, with a view to pursuing construction contracts in the busy Qatari environment. We currently have 88 items of our plant currently working across 7 projects and are also tendering for various other contracts here in Qatar. Our main focus at present is on large earthworks in the heavy civils sector. We are very excited about the Qatari market and the ever increasing opportunities to further expand our fleet and business interests here</p>
+                    </div>
+
+                    <div class="col-sm-5 col-md-5">
+                        <div id="caro" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="images/homeslider/rbSlide1.jpg" alt="img1">
+                            </div>
+                            <div class="item">
+                                <img src="images/homeslider/rbSlide2.jpg" alt="img2">
+                            </div>
+                            <div class="item">
+                                <img src="images/homeslider/rbSlide3.jpg" alt="img3">
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ABOUT COMPANY -->
+        <div class="section why section-border bglight">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-5 col-md-5">
+                        <div class="director-image">
+
+                            <img src="images/director.jpg" alt="bos-photo">
+                        </div>
+                        <div class="margin-bottom-30"></div>
+                    </div>
+                    <div class="col-sm-7 col-md-7">
+                        <h3 class="director-title">Des Mulcair</h3>
+                        <div class="director-position">Managing Director</div>
+                        <div class="margin-bottom-30"></div>
+                        <blockquote style="    font-style: normal !important;">
+                            <p>Roadbridge LLC is a company formed to undertake large scale civil engineering contracts to match the highly ambitious plans for Qatar over the coming decade and beyond. This company combines the experience gained from over forty years of trading in both Roadbridge Ireland and Petroserv Limited respectively.</p>
+                            <p>Our target is to provide a reliable delivery of all projects we undertake from both a time and financial perspective while maintaining the highest standards in terms of safety and quality. This target has been met on a project by project basis in the past by both shareholder companies. We achieve this by employing only the very best management, a highly skilled workforce and a large fleet of modern plant suitable to complete a range of projects including motorway and distributor roads, site excavation and development, steel and concrete pipelines, water and wastewater schemes, landfill and renewable energy works.</p>
+                        </blockquote>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <!--<div class="section project">-->
+        <!--    <div class="container">-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-sm-12 col-md-12">-->
+        <!--                <h2 class="section-heading white">-->
+        <!--                    PROJECTS-->
+        <!--                </h2>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="row grid-services">-->
+        <!--            <div class="col-sm-6 col-md-4" ng-repeat="project in projects">-->
+        <!--                <div class="box-image-4">-->
+        <!--                    <a ng-href="/project/{{project._id}}">-->
+        <!--                        <div class="media">-->
+        <!--                            <img ng-src="/public/img/{{project.cover_photo}}" alt="" class="images-responsive">-->
+        <!--                        </div>-->
+        <!--                        <div class="body">-->
+        <!--                            <div class="content">-->
+        <!--                                <h4 class="title" ng-bind='project.contract_title'></h4>-->
+        <!--                                <span class="category" ng-bind="project.client"></span>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+        <!-- SERVICES -->
+        <!--<div class="section services">-->
+        <!--    <div class="container">-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-sm-12 col-md-12">-->
+        <!--                <h2 class="section-heading">-->
+        <!--                    SERVICES-->
+        <!--                </h2>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        <div class="row">-->
+        <!--            <div class="col-sm-6 col-md-4">-->
+                        <!-- BOX 1 -->
+        <!--                <div class="feature-box-8 equalbox " id="element1">-->
+        <!--                    <div class="media">-->
+        <!--                        <img src="images/Infrastructure.png" alt="Infrastructure" class="images-responsive">-->
+        <!--                    </div>-->
+        <!--                    <div class="body">-->
+        <!--                        <div class="icon-holder">-->
+        <!--                            <span class="fa fa-cubes"></span>-->
+        <!--                        </div>-->
+        <!--                        <a href="/building-and-civil-infrastructure-business-unit" class="title">Building & Civil Infrastructure Business Unit</a>-->
+
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="col-sm-6 col-md-4">-->
+                        <!-- BOX 1 -->
+        <!--                <div class="feature-box-8 equalbox" id="element2">-->
+        <!--                    <div class="media">-->
+        <!--                        <img src="images/oil-factory.png" alt="Oil and Gas" class="images-responsive">-->
+        <!--                    </div>-->
+        <!--                    <div class="body">-->
+        <!--                        <div class="icon-holder">-->
+        <!--                            <span class="fa fa-fire"></span>-->
+        <!--                        </div>-->
+        <!--                        <a href="/oil-and-gas-business-unit" class="title">Oil & Gas Business Unit</a>-->
+
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="col-sm-6 col-md-4">-->
+                        <!-- BOX 1 -->
+        <!--                <div class="feature-box-8 equalbox" id="element3">-->
+        <!--                    <div class="media">-->
+        <!--                        <img src="images/Building.png" alt="Building" class="images-responsive">-->
+        <!--                    </div>-->
+        <!--                    <div class="body">-->
+        <!--                        <div class="icon-holder">-->
+        <!--                            <span class="fa fa-building"></span>-->
+        <!--                        </div>-->
+        <!--                        <a href="/MEP-facility-management-business-unit" class="title">MEP & Facility Management Business Unit</a>-->
+
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+
+        <!-- CTA -->
+        <div class="section cta">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="cta-info">
+
+                            <p>We provide innovative solutions for sustainable progress. Our professional team works to increase productivity and cost effectiveness on the market</p>
+                            <a href="/contact-us" title="" class="btn btn-cta">CONTACT US</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h2 class="section-heading">
+                            OUR CLIENTS
+                        </h2>
+                    </div>
+<!-- slider -->
+                    <div>
+                        <ul id="sliderx">
+                            <li>
+                                <a href="http://www.jec.qa/" target="_blank"><img src="images/clients/aljaber.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.ashghal.gov.qa" target="_blank"><img src="images/clients/ashghal.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://aswanqatar.com/html/aboutus.html" target="_blank"><img src="images/clients/aswan.png"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.besix.com/" target="_blank"><img src="images/clients/besix.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.chec.bj.cn/" target="_blank"><img src="images/clients/chec.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.dogusinsaat.com.tr" target="_blank"><img src="images/clients/dogus.png"></a>
+                            </li>
+                            <li>
+                                <a href="gulfearthmoving.com" target="_blank"><img src="images/clients/gem.png"></a>
+                            </li>
+                            <li>
+                                <a href="www.hlgcontracting.com" target="_blank"><img src="images/clients/hlg.png"></a>
+                            </li>
+                            <li>
+                                <a href="irisas.com.tr" target="_blank"><img src="images/clients/iris.png"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.jandp-group.com/" target="_blank"><img src="images/clients/j&p.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.larsentoubro.com/" target="_blank"><img src="images/clients/l&t.png"></a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><img src="images/clients/lane.png"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company-beta/777620/" target="_blank"><img src="images/clients/peo.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://pergolaqatar.com/" target="_blank"><img src="images/clients/pergola.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.petroserv-limited.com" target="_blank"><img src="images/clients/petroserv.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.qdvc.com" target="_blank"><img src="images/clients/qdvc.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.urbacon-intl.com/" target="_blank"><img src="images/clients/ucc.png"></a>
+                            </li> 
+                            <li>
+                                <a href="http://www.hqatar.com/" target="_blank"><img src="images/clients/harinsa.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://saic.com.qa/saic/" target="_blank"><img src="images/clients/saic.png"></a>
+                            </li> 
+                            <li>
+                                <a href="http://www.botc.com.qa/" target="_blank"><img src="images/clients/bo.png"></a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- /slider -->
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- FOOTER SECTION -->
+        <%- include footer.ejs %>
+
+            <!-- JS VENDOR -->
+            <script type="text/javascript" src="/js/vendor/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/js/vendor/jquery.superslides.js"></script>
+            <script type="text/javascript" src="/js/vendor/owl.carousel.js"></script>
+            <script type="text/javascript" src="/js/vendor/bootstrap-hover-dropdown.min.js"></script>
+            <script type="text/javascript" src="/js/vendor/jquery.magnific-popup.min.js"></script>
+            <script type="text/javascript" src="/js/vendor/easings.js"></script>
+            <script type="text/javascript" src="/js/vendor/isotope.pkgd.min.js"></script>
+            <script type="text/javascript" src="/js/jquery.bxSlider.js"></script>
+            <script type="text/javascript" src="/js/owl-carousel/owl.carousel.js"></script>
+            <!-- sendmail -->
+            <script type="text/javascript" src="/js/vendor/validator.min.js"></script>
+            <script type="text/javascript" src="/js/vendor/form-scripts.js"></script>
+
+
+
+            <script type="text/javascript" src="/js/script.js"></script>
+            <script type="text/javascript" src="/js/typed.js"></script>
+            
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/moment/min/moment-with-locales.js"></script>
+    <!-- load angular-moment --> 
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <!--Angular App-->
+    <link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+    <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular.min.js'></script><link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+    <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular.min.js'></script>
+    <script src="bower_components/angular-uuid/angular-uuid.js"></script
+    ><script src="js/app.js"></script>
+    <script type="text/javascript" src="js/contactController.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#sliderx').bxSlider({
+                        ticker: true,
+                        tickerSpeed: 5000,
+                        tickerHover: true
+                    });
+                });
+            </script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+
+                    Typed.new("#typed", {
+                        stringsElement: document.getElementById('typed-strings'),
+                        typeSpeed: 30,
+                        backDelay: 500,
+                        loop: false,
+                        contentType: 'html', // or text
+                        // defaults to null for infinite loop
+                        loopCount: null,
+                        callback: function() {
+                            foo();
+                        },
+                        resetCallback: function() {
+                            newTyped();
+                        }
+                    });
+
+                    var resetElement = document.querySelector('.reset');
+                    if (resetElement) {
+                        resetElement.addEventListener('click', function() {
+                            document.getElementById('typed')._typed.reset();
+                        });
+                    }
+
+                });
+
+
+                var highestCol = Math.max($('#element1').height(), $('#element2').height(), $('#element3').height());
+                $('.equalbox').height(highestCol);
+            </script>
+            
+
+
+</body>
+
+</html>

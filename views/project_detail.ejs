@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="roadbridge" >
+
+
+
+<head>
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title ng-bind-template="Roadbridge - {{project.contract_title}}"></title>
+	<meta name="description" content=" ">
+	<meta name="keywords" content=" ">
+	<meta name="author" content=" ">
+
+	<!-- ==============================================
+	Favicons
+	=============================================== -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	 
+
+	<!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/vendor/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/vendor/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/vendor/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/vendor/magnific-popup.css">
+
+	<!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+	<script type="text/javascript" src="/js/vendor/modernizr.min.js"></script>
+
+</head>
+
+<body ng-controller="projectDetailController">
+
+	<!-- Load page -->
+	<div class="animationload">
+		 
+		<div class="spinner">
+			<img id="logo-spinner" src="/images/logo-load.png"></img>
+		</div>
+	</div>
+
+	<!-- BACK TO TOP SECTION -->
+	<a href="#top" class="cd-top cd-is-visible cd-fade-out">Top</a>
+
+	<div class="header">
+		<!-- HEADER SECTION -->
+        <%- include header.ejs %>
+	</div>
+
+
+	<!-- BANNER -->
+	<div class="section banner-page about" ng-style="{'background-image':'url(/public/img/' + project.cover_photo + ')'}">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					<div class="title-page" style="background: rgba(0, 0, 0, 0.26);" ng-bind="project.contract_title"></div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Team -->
+	<div class="section why overlap" style="margin-top: 0px;" id="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-md-push-8">
+					<div class="widget info-detail">
+						<div class="widget-title" ng-bind="project.contract_title">
+						</div>
+						<dl>
+							
+							<dt>Start Date :</dt>
+							<dd id="start_date" ng-bind="(project.start_date_month) + ' ' + (project.start_date_year)"></dd>
+							<dt>Completion Date :</dt>
+							<dd ng-bind="(project.end_date_month) + ' ' + (project.end_date_year)"></dd>
+							<dt>Client :</dt>
+							<dd ng-bind="project.client"></dd>
+							<dt>Consultant :</dt>
+							<dd ng-bind="project.consultant"></dd>
+							<dt>Referee</dt>
+							<dd ng-bind="project.client"></dd>
+						</dl>
+					</div>
+					<div class="widget download">
+						<a  href="javascript:demoFromHTML()"target="_blank" class="btn btn-secondary btn-block btn-sidebar"><span class="fa  fa-file-pdf-o"></span>Save as PDF</a>
+					</div>
+				</div>
+				<div class="col-sm-8 col-md-8 col-md-pull-4">
+					<div class="single-page">
+
+						<h2 class="section-heading">
+							Brief description of the works
+						</h2>
+							<div ng-bind-html="project.description" id="description"></div>
+
+						<!--<ul class="checklist">-->
+						<!--	<li>The Works comprises construction, completion and maintenance of enabling works as follows</li>-->
+						<!--	<li>The site is located near the sports Roundabout on the intersection of Al-Rayyan Road and Mohammed Bin Thani Street. The site area is approximately 24000 m2</li>-->
+						<!--	<li>The works comprise the exca*vation works for the six separate but interconnected buildings positioned in two clusters; one incorporating four buildings and one incorporating two including but not limited to the works for the present scope and shall include the enabling works. These shall include but not limited to excavation for basement, design and implementation of dewatering systems wherever required, disposing of surplus material as directed. </li>-->
+						<!--</ul>-->
+						
+						
+					</div>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- FOOTER SECTION -->
+	<%- include footer.ejs %>
+
+	<!-- JS VENDOR -->
+	<script type="text/javascript" src="/js/vendor/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/vendor/jquery.superslides.js"></script>
+	<script type="text/javascript" src="/js/vendor/owl.carousel.js"></script>
+	<script type="text/javascript" src="/js/vendor/bootstrap-hover-dropdown.min.js"></script>
+	<script type="text/javascript" src="/js/vendor/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="/js/vendor/easings.js"></script>
+	<script type="text/javascript" src="/js/vendor/isotope.pkgd.min.js"></script>
+	<script src="/js/jspdf.min.js"></script>
+	<script src="/js/jspdf.plugin.autotable.js"></script>
+	
+	 <script>
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        pdf.setFont('Times'); 
+        // source can be HTML-formatted string, or a reference
+        // to an actual DOM element from which the text will be scraped.
+        source = $('#content')[0];
+
+        // we support special element handlers. Register them with jQuery-style 
+        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+        // There is no support for any other type of selectors 
+        // (class, of compound) at this time.
+        specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        };
+        margins = {
+            top: 40,
+            bottom: 30,
+            left: 40,
+            width: 400
+        };
+        // all coords and widths are in jsPDF instance's declared units
+        // 'inches' in this case
+        pdf.fromHTML(
+            source, // HTML string or DOM elem ref.
+            margins.left, // x coord
+            margins.top, { // y coord
+                'width': margins.width, // max width of content on PDF
+                'elementHandlers': specialElementHandlers
+            },
+
+            function (dispose) {
+                // dispose: object with X, Y of the last line add to the PDF 
+                //          this allow the insertion of new lines after html
+                pdf.save($('[ng-controller="projectDetailController"]').scope().project.contract_title + " - Roadbridge LLC");
+            }, margins
+        );
+    }
+</script>
+	<!-- sendmail -->
+	<script type="text/javascript" src="/js/vendor/validator.min.js"></script>
+	<script type="text/javascript" src="/js/vendor/form-scripts.js"></script>
+
+	<script type="text/javascript" src="/js/script.js"></script>
+
+	<script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/moment/min/moment.min.js"></script>
+    <script src="/bower_components/moment/min/moment-with-locales.js"></script>
+    <!-- load angular-moment --> 
+    <script src="/bower_components/angular-moment/angular-moment.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="/bower_components/ngstorage/ngStorage.min.js"></script>
+    <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
+    <script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
+    <script src='/bower_components/angular-uuid/angular-uuid.js'></script>
+    <!--Angular App-->
+    <script src="/js/app.js"></script>
+    <script src="/js/contactController.js"></script>
+</body>
+
+
+
+</html>

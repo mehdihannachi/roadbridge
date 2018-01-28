@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="roadbridge">
+
+<head>
+    <!-- Basic Page Needs
+	================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roadbridge - What we do</title>
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+    <meta name="author" content=" ">
+
+    <!-- ==============================================
+	Favicons
+	=============================================== -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+
+    <!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="js/isotope/jquery.isotope.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/theme-elements.css">
+
+    <!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script type="text/javascript" src="js/vendor/modernizr.min.js"></script>
+    <style type="text/css">
+        #listproject li {
+            display: none;
+        }
+        #loadMore {
+            color: #041e42;
+            cursor: pointer;
+            text-align: center;
+        }
+        #loadMore:hover {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body ng-controller="projectController">
+
+    <!-- Load page -->
+    <div class="animationload">
+
+        <div class="spinner">
+            <img id="logo-spinner" src="images/logo-load.png"></img>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP SECTION -->
+    <a href="#top" class="cd-top cd-is-visible cd-fade-out">Top</a>
+
+    <div class="header">
+        <!-- HEADER SECTION -->
+        <%- include header.ejs %>
+
+    </div>
+
+    <!-- BANNER -->
+    <div class="section banner-page about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="title-page">What we do</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team -->
+    <div class="section why overlap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="single-page">
+                        <p>Roadbridge LLC are a local civil engineering contractor, founded in 2013, specialising in the delivery of complete infrastructure projects from QAR1m - £300m, across all sectors; for a broad range of clients and contract conditions.</p><p>
+Roadbridge is a stable, private, family-owned
+company who have built our reputation upon
+working collaboratively with our clients;
+offering them a quality service and product
+with genuine added value.</p><p>
+Roadbridge is a fully-resourced contractor.
+We have the experience, capability and
+a proven track record in delivering major
+projects safely, on time and within budget.
+We also own one of the largest in-house
+plant fleets in Europe, giving unparalleled
+control over project delivery </p>
+                    </div>
+                    
+                                        <div class="single-page">
+                                                                    <h2 class="section-heading">
+                            What makes us different
+                        </h2>
+                        <p>We are founded upon the strength and
+experience of our people; our leaders,
+managers and highly experienced and
+trained direct labour force. We have an
+exceptional record for staff retention.</p><p>
+Our core ethos is not just to meet client’s
+expectations, but to exceed them. We have
+never been late in completing a project
+and our track record of repeat business is
+testament to this.</p>
+                        <ul>
+                            <li>Customer-focussed collaborative working</li>
+                            <li>Non-adversarial/no claims approach</li>
+                            <li>Delivering genuine ‘right first time’ workmanship</li>
+                            <li>SHEQ excellence</li>
+                            <li>Sustainable approach</li>
+                            <li>Innovation and value engineering</li>
+                            <li>In-house resources and supply chain partnerships</li>
+                            <li>Makes us a partner who clients actively seek repeat business with.</li>
+                        </ul>
+
+                    </div>
+                    
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="single-page">
+                        <h2 class="section-heading">
+                            Our Fleet
+                        </h2>
+                        <p>Roadbridge owns and operates a wide ranging plant fl eet enabling us to selfperform the major works on our projects. The plant fl eet in excess of 600 units comprises: Tracked and Wheeled Excavators; Bulldozers; Articulated Dump Trucks; Site Dumpers; Teleporters; Loaders; Graders; Rollers; Concrete Crushers, Rockbreakers, Piling Hammers, and Screeners. All our plant is serviced and maintained by main dealers and all have bought into our preventative maintenance policy. GPS systems have been fi tted to a signifi cant portion of all Excavators, Dozers and Graders. Lift Watch and Height watch systems are also fi tted to a wide range of our excavators. Roadbridge has invested signifi cantly in on site repairs which fall under the wear and tear banner and now has the ability to complete all repairs on tyres, buckets and breakers etc. in house without any delays. This provides signifi cant resilience to our operations and allows us to self-perform the majority of site tasks with the fl exibility to swiftly augment plant resources as required</p>
+                        <ul class="nav nav-pills sort-source" data-sort-id="team" data-option-key="filter">
+                            <li data-option-value="*" class="active"><a href="#">Show All</a>
+                            </li>
+                            <li data-option-value=".Excavators"><a href="#">Excavators</a>
+                            </li>
+                            <li data-option-value=".ADTs"><a href="#">Dumpers</a>
+                            </li>
+
+                            <li data-option-value=".Graders"><a href="#">Graders</a>
+                            </li>
+                            <li data-option-value=".Bulldozers"><a href="#">Bulldozers</a>
+                            </li>
+                            <li data-option-value=".Teleporters"><a href="#">Teleporters</a>
+                            </li>
+                            <li data-option-value=".Breakers"><a href="#">Rock Breakers</a>
+                            </li>
+                            <li data-option-value=".Rollers"><a href="#">Rollers</a>
+                            </li>
+                            <li data-option-value=".Misc"><a href="#">Other Plant Items</a>
+                            </li>
+                        </ul>
+
+                        <hr />
+                        <div class="plant-grid">
+                            <a class="plant-link thumb-info">
+                                <figure>
+                                    <img src="/images/plant/Bulldozer.jpg" class="plant-img">
+                                    <span class="thumb-info-title">
+                                      <span class="thumb-info-inner">Dozers</span>
+                                    <span class="thumb-info-type">Bulldozers</span>
+                                    </span>
+                                    <div class="plant-detail">
+                                        <div class="col-sm-3 col-md-3">
+                                            <span class="plant-model">Total:</span>
+                                            <span>3</span><br>
+                                            <span>3</span><br>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9">
+                                        <span class="plant-model">Models:</span>
+                                            <span>Komatsu D85</span><br>
+                                            <span>Komatsu D65</span><br>
+                                    </div>
+                                    </div>
+                                </figure>
+
+                            </a>
+                            <a class="plant-link thumb-info">
+                                <figure>
+                                    <img src="/images/plant/Graders.jpg" class="plant-img">
+                                    <span class="thumb-info-title">
+                      <span class="thumb-info-inner">Graders</span>
+                                    <span class="thumb-info-type">Graders</span>
+                                    </span>
+                                    <div class="plant-detail">
+                                        <div class="col-sm-3 col-md-3">
+                                            <span class="plant-model">Total:</span>
+                                            <span>2</span><br>
+                                    </div>
+                                        <div class="col-sm-9 col-md-9">
+                                            <span class="plant-model">Models:</span>
+                                            <span>Volve G990</span><br>
+                                        </div>
+                                        </div>
+                                </figure>
+
+                            </a>
+                            <a class="plant-link thumb-info">
+                                <figure>
+                                    <img src="/images/plant/Tracks.jpg" class="plant-img">
+                                    <span class="thumb-info-title">
+                      <span class="thumb-info-inner">Tracked Excavators</span>
+                                    <span class="thumb-info-type">Excavators</span>
+                                    </span>
+                                    <div class="plant-detail">
+                                        <div class="col-sm-3 col-md-3">
+                                            <span class="plant-model">Total:</span>
+                                            <span>1</span><br>
+                                            <span>5</span><br>
+                                            <span>3</span><br>
+                                            <span>1</span><br>
+                                            <span>2</span><br>
+                                            <span>3</span><br>
+                                            <span>3</span><br>
+                                            <span>2</span><br>
+                                            <span>9</span><br>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9">
+                                            <span class="plant-model">Models:</span>
+                                            <span>KOMATSU PC350LC-8</span><br>
+                                            <span>JCB JS260LC</span><br>
+                                            <span>VOLVO EC700BLC</span><br>
+                                            <span>CAT 345CL</span><br>
+                                            <span>KOMATSU PC600LC‐8</span><br>
+                                            <span>Hitachi ZX470‐5G</span><br>
+                                            <span>VOLVO EC350DL</span><br>
+                                            <span>VOLVO 205DC</span><br>
+                                            <span>Caterpillar 320D</span><br>
+                                    </div>
+                                    </div>
+                                </figure>
+
+                            </a>
+                            <a class="plant-link thumb-info">
+                                <figure>
+                                    <img src="/images/plant/Rubbers.jpg" class="plant-img">
+                                    <span class="thumb-info-title">
+                      <span class="thumb-info-inner">Wheeled Excavators</span>
+                                    <span class="thumb-info-type">Excavators</span>
+                                    </span>
+                                    <div class="plant-detail">
+                                        <div class="col-sm-3 col-md-3">
+                                            <span class="plant-model">Total:</span>
+                                            <span>2</span><br>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9">
+                                            <span class="plant-model">Models:</span>
+                                            <span>JCB JS160W</span><br>
+                                    </div>
+                                    </div>
+                                </figure>
+
+                            </a>
+                            <a class="plant-link thumb-info">
+                                <figure>
+                                    <img src="/images/plant/ADT.jpg" class="plant-img">
+                                    <span class="thumb-info-title">
+                      <span class="thumb-info-inner">Articulated dump truck</span>
+                                    <span class="thumb-info-type">Dumpers</span>
+                                    </span>
+                                    <div class="plant-detail">
+                                        <div class="col-sm-3 col-md-3">
+                                            <span class="plant-model">Total:</span>
+                                            <span>8</span><br>
+                                            <span>1</span><br>
+                                            <span>5</span><br>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9">
+                                            <span class="plant-model">Models:</span>
+                                            <span>VOLVO A40E</span><br>
+                                            <span>KOMATSU HM400‐2</span><br>
+                                            <span>CAT 740</span><br>
+                                    </div></div>
+                                </figure>
+
+                            </a>
+                            <a class="plant-link thumb-info">
+                                <figure>
+                                    <img src="/images/plant/rockbreaker.jpg" class="plant-img">
+                                    <span class="thumb-info-title">
+                      <span class="thumb-info-inner">Hydraulic Hammer</span>
+                                    <span class="thumb-info-type">Rock Breakers</span>
+                                    </span>
+                                    <div class="plant-detail">
+                                        <div class="col-sm-3 col-md-3">
+                                            <span class="plant-model">Total:</span>
+                                            <span>1</span><br>
+                                            <span>6</span><br>
+                                            <span>2</span><br>
+                                            <span>2</span><br>
+                                            <span>2</span><br>
+                                            <span>3</span><br>
+                                            <span>2</span><br>
+                                            <span>1</span><br>
+                                            <span>1</span><br>
+                                            <span>5</span><br>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9">
+                                            <span class="plant-model">Models:</span>
+                                            <span>RAMMER 7013</span><br>
+                                            <span>RAMMER 5011</span><br>
+                                            <span>RAMMER 4099</span><br>
+                                            <span>ATLAS HB3600</span><br>
+                                            <span>ATLAS HB2500</span><br>
+                                            <span>RAMMER 3288</span><br>
+                                            <span>ATLAS HB7000</span><br>
+                                            <span>MONTABERT 900</span><br>
+                                            <span>ATLAS HB2500</span><br>
+                                            <span>Soosan SB81A</span><br>
+                                        </div>
+                                    </div>
+                                </figure>
+
+                            </a>
+                            <a class="plant-link thumb-info">
+                                <figure>
+                                    <img src="/images/plant/Rollers.jpg" class="plant-img">
+                                    <span class="thumb-info-title">
+                                     <span class="thumb-info-inner">Rollers</span>
+                                    <span class="thumb-info-type">Rollers</span>
+                                    </span>
+                                    <div class="plant-detail">
+                                        <div class="col-sm-3 col-md-3">
+                                            <span class="plant-model">Total:</span>
+                                            <span>2</span><br>
+                                            <span>3</span><br>
+                                            <span>3</span><br>
+                                        </div>
+                                        <div class="col-sm-9 col-md-9">
+                                            <span class="plant-model">Models:</span>
+                                            <span>ATLAS COPCO CA270D</span><br>
+                                            <span>JCB VIBROMAX VM200D</span><br>
+                                            <span>JCB VIBROMAX VM146D</span><br>
+                                        </div>
+                                    </div>
+                                </figure>
+
+                            </a>
+                            <a class="plant-link thumb-info">
+                                <figure>
+                                    <img src="/images/plant/Tractors.jpg" class="plant-img">
+                                    <span class="thumb-info-title">
+                      <span class="thumb-info-inner">Other Plant Items</span>
+                                    <span class="thumb-info-type">Other Plant Items</span>
+                                    </span>
+                                    <div class="plant-detail">
+                                        <div class="col-sm-2 col-md-2">
+                                            <span class="plant-model">Total:</span>
+                                            <span>1</span><br>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3">
+                                            <span class="plant-model">Type:</span>
+                                            <span>Water Tanker</span><br>
+                                        </div>
+                                        <div class="col-sm-7 col-md-7">
+                                            <span class="plant-model">Models:</span>
+                                            <span>MERCEDES 4031‐5000 Gallon</span><br>
+                                        </div>
+                                    </div>
+                                </figure>
+
+                            </a>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- FOOTER SECTION -->
+    <%- include footer.ejs %>
+
+        <!-- JS VENDOR -->
+        <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.superslides.js"></script>
+        <script type="text/javascript" src="js/vendor/owl.carousel.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap-hover-dropdown.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="js/vendor/easings.js"></script>
+        <script type="text/javascript" src="js/vendor/isotope.pkgd.min.js"></script>
+        <!--<script type="text/javascript" src="js/theme.js"></script>-->
+        <script type="text/javascript" src="js/isotope/jquery.isotope.js"></script>
+
+        <!-- sendmail -->
+        <script type="text/javascript" src="js/vendor/validator.min.js"></script>
+        <script type="text/javascript" src="js/vendor/form-scripts.js"></script>
+
+<script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/moment/min/moment-with-locales.js"></script>
+    <!-- load angular-moment --> 
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script><script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <!--Angular App-->
+    <link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+    <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular.min.js'></script><link rel='stylesheet' href='bower_components/textAngular/dist/textAngular.css'>
+    <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='bower_components/textAngular/dist/textAngular.min.js'></script><script src="bower_components/angular-uuid/angular-uuid.js"></script><script src="js/app.js"></script>
+    <script type="text/javascript" src="js/contactController.js"></script>
+
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // Load the first 3 list items from another HTML file
+                //$('#myList').load('externalList.html li:lt(3)');
+                var x = 5;
+                $('#listproject li:lt(5)').show();
+                $('#loadMore').click(function() {
+                    x = x + 5;
+                    $('#listproject li:lt(' + x + ')').show();
+                });
+            });
+        </script>
+
+</body>
+
+</html>

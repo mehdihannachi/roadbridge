@@ -1,0 +1,57 @@
+<div class="footer" ng-controller="projectController">
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-6 col-md-6">
+				<div class="footer-item" >
+					<img src="/images/logo-light.png" alt="logo bottom" class="logo-bottom">
+					<p>Roadbridge Limited, along with local Qatari company Petroserv, have recently formed a limited company in Qatar, Roadbridge Civil & Building Contractors LLC, with a view to pursuing construction contracts in the busy Qatari environment. We currently have 72 items of our plant currently working across 7 projects and are also tendering for various other contracts here in Qatar. Our main focus at present is on large earthworks in the heavy civils sector.</p>
+					<!--<div class="footer-sosmed">-->
+					
+					<!--	<a href="https://www.linkedin.com/company-beta/1444546/" target="_blank" title="">-->
+					<!--		<div class="item">-->
+					<!--			<i class="fa fa-linkedin"></i>-->
+					<!--		</div>-->
+					<!--	</a>-->
+					<!--	<a href="https://twitter.com/Petroserv_Ltd" target="_blank" title="">-->
+					<!--		<div class="item">-->
+					<!--			<i class="fa fa-twitter"></i>-->
+					<!--		</div>-->
+					<!--	</a>-->
+					<!--	<a href="https://www.youtube.com/channel/UCw0GYOSvypThlbnmgYffXNQ" target="_blank" title="">-->
+					<!--		<div class="item">-->
+					<!--			<i class="fa fa-youtube"></i>-->
+					<!--		</div>-->
+					<!--	</a>-->
+						
+					<!--	</div>-->
+					</div>
+				</div>
+
+
+				<div class="col-sm-5 col-md-5 col-md-offset-1 col-sm-offset-1" style="margin-top: 70px;">
+					<div class="footer-item">
+						<div class="footer-title">
+							Our Projects
+						</div>
+						<ul class="list" >
+							<li ng-repeat="project in rankedList | orderBy:'rank'| limitTo:3"><a ng-href="/project/{{project.item._id}}" title="" ng-bind='project.item.contract_title'></a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="fcopy">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<p class="ftex">&copy; 2017 RoadBridge LLC- All Rights Reserved. <a href="/projects_list" style="color:#fff;">Intranet</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</div>

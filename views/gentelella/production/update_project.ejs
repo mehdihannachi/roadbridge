@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="roadbridge">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Roadbridge | Dashboard</title><link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- Bootstrap -->
+    <link href="/gentelella/production/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/gentelella/production/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/bower_components/ng-image-input-with-preview/dist/ng-image-input-with-preview.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bower_components/ng-image-input-with-preview/dist/ng-image-input-with-preview.css">
+    
+    <!-- Custom Theme Style -->
+    <link href="/gentelella/production/build/css/custom.min.css" rel="stylesheet">
+        <script src="/gentelella/production/vendors/jquery/dist/jquery.min.js"></script>
+
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+
+
+        <%- include header_dash.ejs %>
+
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Project Update</h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <form class="form-horizontal form-label-left" name="projectsForm" novalidate ng-class="{true:'submitted'}[submitted]" ng-controller="updateController">
+                  <div class="overlay">
+                      <div id="loading-img"></div>
+                  </div>
+                      <p>You can update projects details in here, for posting images, please drag and drop the image you want into the description box.</a>
+                      </p>
+                      <span class="section">Project details</span>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="name">Cover Picture<span class="required">*</span>
+                        </label>
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                       <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <div class="row">
+                        <img ng-show="imageSrc" ng-src="{{imageSrc}}" class="img-responsive-4" style="max-height:250px; width:auto;"/>
+                        </div>
+                        </br>
+                        <div class="row">
+                              <button class="btn btn-default upload-btn"  ng-click="uploadfiles()">Sauvegarder Fichier</button>
+                              <input id="upload_input" style="display: none;" type="file" ng-file-select="onFileSelect($files)" name="myImage" file-model="newForm" accept="image/jpeg,image/png">
+
+                        </div>
+                    </div>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="name">Contract title <span class="required">*</span>
+                        </label>
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" ng-model="project.contract_title" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="start_date">Start Date <span class="required">*</span>
+                        </label>
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                        <fieldset>
+                          <div class="control-group">
+                            <div class="controls">
+                              <div class="col-md-12 xdisplay_inputx form-group has-feedback">
+                               <select name="start_date_month" id="start_date_month" class="btn btn-info dropdown-toggle col-md-4 col-sm-4 col-xs-6" ng-model="project.start_date_month" ng-required="true" onchange="">
+									                     <option value="" selected="true" disabled="disabled">Month</option>
+                                                                <option value="January">January</option>
+                                                                <option value="February">February</option>
+                                                                <option value="March">March</option>
+                                                                <option value="April">April</option>
+                                                                <option value="May">May</option>
+                                                                <option value="June">June</option>
+                                                                <option value="July">July</option>
+                                                                <option value="August">August</option>
+                                                                <option value="September">September</option>
+                                                                <option value="October">October</option>
+                                                                <option value="November">November</option>
+                                                                <option value="December">December</option>
+									          </select>
+									            <select id="start_date_year" ng-model="project.start_date_year" name="start_date_year" ng-required="true" class="btn btn-info dropdown-toggle col-md-4 col-sm-4 col-xs-6">
+      							<option value="" disabled="disabled">Year</option>
+      							<script>
+                                                                    var myDate = new Date();
+                                                                    var year = 2030;
+
+                                                                    var optionsAsString = "";
+                                                                    for(var i = year; i > 1950; i--){
+                                                                        optionsAsString += "<option value='" + i + "'>" + i + "</option>";
+                                                                    }
+                                                                    $( 'select[name="start_date_year"]' ).append( optionsAsString );
+
+                                                                </script>
+                                  </select>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        </div>
+                      </div>
+                      
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="end_date_month">End Date <span class="required">*</span>
+                        </label>
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                        <fieldset>
+                          <div class="control-group">
+                            <div class="controls">
+                              <div class="col-md-12 xdisplay_inputx form-group has-feedback">
+                               <select name="end_date_month" id="end_date_month" class="btn btn-info dropdown-toggle col-md-4 col-sm-4 col-xs-6" ng-model="project.end_date_month">
+									                     <!--<option value="" selected="true" disabled="disabled">Month</option>-->
+                                                                <option value="January">January</option>
+                                                                <option value="February">February</option>
+                                                                <option value="March">March</option>
+                                                                <option value="April">April</option>
+                                                                <option value="May">May</option>
+                                                                <option value="June">June</option>
+                                                                <option value="July">July</option>
+                                                                <option value="August">August</option>
+                                                                <option value="September">September</option>
+                                                                <option value="October">October</option>
+                                                                <option value="November">November</option>
+                                                                <option value="December">December</option>
+									          </select>
+									            <select id="end_date_year" ng-model="project.end_date_year" name="end_date_year" class="btn btn-info dropdown-toggle col-md-4 col-sm-4 col-xs-6">
+
+      							<script>
+                                                                    var myDate = new Date();
+                                                                    var year = 2030;
+
+                                                                    var optionsAsString = "";
+                                                                    for(var i = year; i > 1950; i--){
+                                                                        optionsAsString += "<option value='" + i + "'>" + i + "</option>";
+                                                                    }
+                                                                    $( 'select[name="end_date_year"]' ).append( optionsAsString );
+
+                                                                </script>
+                                  </select>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="client">Client <span class="required">*</span>
+                        </label>
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                          <textarea id="client" ng-model="project.client" required="required" name="client" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="consultant">Consultant <span class="required">*</span>
+                        </label>
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                          <textarea id="consultant" ng-model="project.consultant" name="consultant" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="referee">referee <span class="required">*</span>
+                        </label>
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                          <textarea id="referee" ng-model="project.referee" name="referee" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="description">Description <span class="required">*</span>
+                        </label>
+                        <div class="col-md-11 col-sm-11 col-xs-12">
+                          <div text-angular ng-model="project.description"></div>
+                          <!--<textarea id="description" ng-model="description" required="required" name="description" class="form-control col-md-7 col-xs-12"></textarea>-->
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-10 col-md-offset-10">
+                          <button type="submit" class="btn btn-primary" ><a href="/projects_list" style="color:#fff;">Cancel</a></button>
+                          <button type="submit" class="btn btn-success" ng-click="updateProject(projectsForm.$valid, project._id)">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+
+        <%- include footer_dash.ejs %>
+
+      </div>
+    </div>
+
+
+    <!-- Bootstrap -->
+    <script src="/gentelella/production/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="/gentelella/production/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/gentelella/production/vendors/nprogress/nprogress.js"></script>
+    <!-- validator -->
+    <script src="/gentelella/production/vendors/validator/validator.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="/gentelella/production/js/moment/moment.min.js"></script>
+    <script src="/gentelella/production/js/datepicker/daterangepicker.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="/gentelella/production/build/js/custom.min.js"></script>
+    <!--Angular-->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/moment/min/moment-with-locales.js"></script>
+    <!-- load angular-moment --> 
+    <script src="/bower_components/angular-moment/angular-moment.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="/bower_components/ngstorage/ngStorage.min.js"></script>
+    <!--Angular App-->
+    <link rel='stylesheet' href='/bower_components/textAngular/dist/textAngular.css'>
+    <script src='/bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='/bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
+    <script src="/bower_components/angular-uuid/angular-uuid.js"></script><script src="/js/app.js"></script>
+    <script src="/js/controllers/updateController.js"></script>
+    <script src="/js/controllers/loginController.js"></script>
+
+        <script src="/bower_components/ng-image-input-with-preview/dist/ng-image-input-with-preview.js"></script>
+
+    <!-- validator -->
+    <script>
+    $('#start_date').daterangepicker({
+          singleDatePicker: true,
+          calender_style: "picker_3"
+        }, function(start, end, label) {
+          $('[ng-controller="updateController"]').scope().start_date = start.toISOString();
+        });
+    $('#end_date').daterangepicker({
+          singleDatePicker: true,
+          calender_style: "picker_3"
+        }, function(start, end, label) {
+          $('[ng-controller="updateController"]').scope().end_date = start.toISOString();
+        });
+      // initialize the validator function
+      // validator.message.date = 'not a real date';
+
+      // // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+      // $('form')
+      //   .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+      //   .on('change', 'select.required', validator.checkField)
+      //   .on('keypress', 'input[required][pattern]', validator.keypress);
+
+      // $('.multi.required').on('keyup blur', 'input', function() {
+      //   validator.checkField.apply($(this).siblings().last()[0]);
+      // });
+
+      // $('form').submit(function(e) {
+      //   e.preventDefault();
+      //   var submit = true;
+
+      //   // evaluate the form using generic validaing
+      //   if (!validator.checkAll($(this))) {
+      //     submit = false;
+      //   }
+
+      //   if (submit)
+      //     this.submit();
+
+      //   return false;
+      // });
+    </script>
+    <!-- /validator -->
+  </body>
+</html>
