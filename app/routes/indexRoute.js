@@ -1,5 +1,5 @@
 /*
-Author URI: https://www.kawami.io/
+Author Mehdi Hannachi
 */
 module.exports = function(app, transporter, passport) {
 	var indexController = require('./../controllers/indexController');
@@ -203,11 +203,12 @@ module.exports = function(app, transporter, passport) {
 			if (!req.body.data.message) {
 				req.body.data.message = "Null";
 			}
+			console.log("heeeeere")
 			mailer({
 				template: "contact-us",
 				footer: false,
 				from: 'Contact us <' + req.body.data.email + '>',
-				to: 'mhaasif1@gmail.com',
+				to: 'mahdi.hannachi@gmail.com',
 				subject: req.body.data.subject,
 				vars: {
 					subject: req.body.data.subject,

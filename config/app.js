@@ -1,5 +1,5 @@
 /*
-Author URI: https://www.kawami.io/
+Author Mehdi Hannachi
 */
 module.exports = {
 	'domain': process.env.C9_HOSTNAME,

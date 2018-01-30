@@ -52,7 +52,7 @@ module.exports.passwordresetGET = function(req, res) {
                 template: "sendpassword",
                 footer: true,
                 to: _hash.user_id.local.email,
-                subject: "Nouveau mot de passe - Clinique la Rose",
+                subject: "New password - Roadbridge",
                 vars: {
                     new_password: newPassword
                 }
@@ -95,7 +95,7 @@ module.exports.forgotpasswordPOSTajax = function(req, res) {
                         template: "lostPassword",
                         footer: true,
                         to: user.local.email,
-                        subject: "Mots de passe oublié - laRose.Co",
+                        subject: "Forgotten Password - Roadbridge",
                         vars: {
                             reset_link: reset_link
                         }

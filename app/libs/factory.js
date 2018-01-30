@@ -1,5 +1,5 @@
 /*
-Author URI: https://www.kawami.io/
+Author Mehdi Hannachi
 */
 module.exports.slugify = function(text) {
 	return text.toString().toLowerCase()

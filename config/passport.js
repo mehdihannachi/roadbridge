@@ -168,7 +168,7 @@ module.exports = function(passport) {
                         error: 'Mail  invalide'
                     });
                 }
-                else if (!req.user) {
+                else {
                     console.log(2);
                     User.findOne({
                         'local.email': email
@@ -204,13 +204,13 @@ module.exports = function(passport) {
                         }
                     });
                 }
-                else {
-                    // user is logged in and already has a local account. Ignore signup. (You should log out before trying to create a new account, user!)
-                    return done(null, req.user, {
-                        code: 66,
-                        error: 'User is logged in and already has a local account. You should log out before trying to create a new account. '
-                    })
-                }
+//                 else {
+//                     // user is logged in and already has a local account. Ignore signup. (You should log out before trying to create a new account, user!)
+//                     return done(null, req.user, {
+//                         code: 66,
+//                         error: 'User is logged in and already has a local account. You should log out before trying to create a new account. '
+//                     })
+//                 }
 
             });
             console.log('ok');

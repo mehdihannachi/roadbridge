@@ -1,5 +1,5 @@
 /*
-Author URI: https://www.kawami.io/
+Author Mehdi Hannachi
 */
   var i18n = require('i18n');
 

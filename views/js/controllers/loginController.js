@@ -1,135 +1,138 @@
 // loginController contoller 
 roadbridge.controller('loginController', function($scope, $http, $sessionStorage, $state, $timeout) {
 
-    $scope.connectedUser = {};
-    $scope.loggedIn = function() {
-        if ($sessionStorage.connectedUser) {
-            $scope.connectedUser = $sessionStorage.connectedUser;
-        }
+  $scope.connectedUser = {};
+  $scope.error = false;
+  $scope.errorMSG = "";
+  $scope.loggedIn = function() {
+    if ($sessionStorage.connectedUser) {
+      $scope.connectedUser = $sessionStorage.connectedUser;
     }
-    $scope.loggedIn();
-    $scope.userLogin = {};
-    $scope.userSignup = {};
-    $scope.PassReco = {};
+  }
+  $scope.loggedIn();
+  $scope.userLogin = {};
+  $scope.userSignup = {};
+  $scope.PassReco = {};
 
 
-    // function btn_login
-    $scope.btn_login = function(valid) {
-        $scope.submitted = true;
-        if (valid) {
+  // function btn_login
+  $scope.btn_login = function(valid) {
+    $scope.submitted = true;
+    if (valid) {
 
-            $http.post('/ajax/login', {
-                email: $scope.userLogin.email,
-                password: $scope.userLogin.password
-            }).then(function successCallback(response) {
-                console.log(response)
-                if (response.data.error == false) {
-                    $sessionStorage.connectedUser = response.data.user;
-                    window.location.href = '/projects_list';
-                }
-                else {
-                    $scope.error = true;
-                    $scope.errorMSG = response.error;
-                    $timeout(function() {
-                        $scope.error = false;
-                    }, 4000);
-                }
-
-            }).then(function failureCallback(response) {
-                console.log(response)
-            })
+      $http.post('/ajax/login', {
+        email: $scope.userLogin.email,
+        password: $scope.userLogin.password
+      }).then(function successCallback(response) {
+        console.log(response)
+        if (response.data.error == false) {
+          $sessionStorage.connectedUser = response.data.user;
+          window.location.href = '/projects_list';
+        } else {
+          $scope.error = true;
+          $scope.errorMSG = response.error;
+          $timeout(function() {
+            $scope.error = false;
+          }, 4000);
         }
 
+      }).then(function failureCallback(response) {
+        console.log(response)
+      })
     }
 
-    $scope.btn_signup = function(valid) {
-        $scope.submitted = true;
+  }
 
-        if (valid) {
+  $scope.btn_signup = function(valid) {
+    $scope.submitted = true;
 
-            $http.post('/ajax/signup-admin', {
-                user: $scope.userSignup,
-                email: $scope.userSignup.email,
-                password: $scope.userSignup.password,
-                isAdmin: 'true'
-            }).then(function successCallback(response) {
-                if (!response.error) {
+    if (valid) {
 
-                    window.location.href = '/';
-                }
-                else {
-                    if (response.error) {
-                        $scope.error = true;
-                        $scope.errorMSG = response.error;
-                        $timeout(function() {
-                            $scope.error = false;
-                        }, 4000);
-                    }
-                    // console.error("Error sign up patient")
-                }
-            })
+      $http.post('/ajax/signup-admin', {
+        user: $scope.userSignup,
+        email: $scope.userSignup.email,
+        password: $scope.userSignup.password,
+        isAdmin: 'true'
+      }).then(function successCallback(response) {
+        console.log(response)
+        console.log($scope.error)
+        console.log($scope.errorMSG)
+        if (!response.data.error) {
 
-        }
-        else {
+          window.location.href = '/';
+        } else {
+          if (response.data.error) {
             $scope.error = true;
-            $scope.errorMSG = 'Veuillez verifier tout les champs et les termes du contrat'
+            $scope.errorMSG = response.data.error;
+            console.log($scope.error)
+            console.log($scope.errorMSG)
             $timeout(function() {
-                $scope.error = false;
+              $scope.error = false;
             }, 4000);
+          }
+          // console.error("Error sign up patient")
         }
-    }
+      })
 
-
-    // passwordController
-    $scope.btn_Forgotpassword = function(valid) {
-        console.log("test")
-        $scope.submitted = true;
-        $scope.sendmail = false;
+    } else {
+      $scope.error = true;
+      $scope.errorMSG = 'Veuillez verifier tout les champs et les termes du contrat'
+      $timeout(function() {
         $scope.error = false;
-        $scope.errorMSG = "";
-        if (valid) {
-            $scope.submitted = false;
-            $http.post('/ajax/forgotpassword', {
-                email: $scope.forgetemail
-            }).then(function successCallback(response) {
-                if (!response.error) {
-                    $scope.sendmail = true;
-                    $scope.error = false;
-                }
-                else if (response.error == true) {
-                    $scope.error = true
-                    $scope.errorMSG = response.message
-                    $timeout(function() {
-                        $scope.error = false;
-                    }, 4000);
-                }
-            }).then(function failureCallback(response) {
-                $scope.showerrorcnx = true;
-                $scope.errorcnx = response;
-            });
+      }, 4000);
+    }
+  }
+
+
+  // passwordController
+  $scope.btn_Forgotpassword = function(valid) {
+    console.log("test")
+    $scope.submitted = true;
+    $scope.sendmail = false;
+    $scope.error = false;
+    $scope.errorMSG = "";
+    if (valid) {
+      $scope.submitted = false;
+      $http.post('/ajax/forgotpassword', {
+        email: $scope.forgetemail
+      }).then(function successCallback(response) {
+        console.log(response)
+        if (!response.data.error) {
+          $scope.sendmail = true;
+          $scope.error = false;
+        } else if (response.data.error === true) {
+          $scope.error = true
+          $scope.errorMSG = response.data.message
+          $timeout(function() {
+            $scope.error = false;
+          }, 4000);
+        }
+      }).then(function failureCallback(response) {
+        $scope.showerrorcnx = true;
+        $scope.errorcnx = response;
+      });
+    }
+
+  }
+
+
+
+  $scope.btn_logout = function() {
+    console.log('jej')
+    $http.get('/logout').then(function(response) {
+        if (response.data.error == false) {
+          delete $sessionStorage.connectedUser;
+          window.location.href = '/';
+        } else {
+          $scope.error = true;
+          $scope.errorMSG = response.data.error;
+          $timeout(function() {
+            $scope.error = false;
+          }, 4000);
         }
 
-    }
-
-
-
-    $scope.btn_logout = function() {
-        console.log('jej')
-        $http.get('/logout').then(function(response) {
-                if (response.data.error == false) {
-                    delete $sessionStorage.connectedUser;
-                    window.location.href = '/';
-                }
-                else {
-                    $scope.error = true;
-                    $scope.errorMSG = response.data.error;
-                    $timeout(function() {
-                        $scope.error = false;
-                    }, 4000);
-                }
-
-            }),
-            function(res2) {};
-    }
+      }),
+      function(res2) {};
+  }
 
 });

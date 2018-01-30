@@ -1,5 +1,5 @@
 /*
-Author URI: https://www.kawami.io/
+Author Mehdi Hannachi
 */
 var ExpressBrute = require('express-brute');
 var Ddos = require('ddos')
